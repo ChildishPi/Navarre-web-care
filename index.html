@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="upgrade-insecure-requests; default-src 'self' https://images.unsplash.com;"
+      content="default-src 'self'; connect-src 'self' http://localhost:3000 https://example.com; img-src 'self' https://images.unsplash.com data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; upgrade-insecure-requests;"
     />
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
     <meta http-equiv="Cache-Control" content="public, max-age=3600" />
@@ -29,7 +29,73 @@
       section {
         background: transparent;
       }
+      .cta-btn {
+        display: inline-block;
+        padding: 10px 14px;
+        background: #0077b6;
+        color: #fff;
+        border-radius: 6px;
+        text-decoration: none;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+      .cta-btn:hover,
+      .cta-btn:focus {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(3, 37, 65, 0.18);
+        outline: 3px solid rgba(0, 119, 182, 0.12);
+        outline-offset: 2px;
+      }
+      /* News scroller styles */
+      .news-card {
+        height: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: linear-gradient(
+          rgba(0, 119, 182, 0.75),
+          rgba(0, 119, 182, 0.7)
+        );
+        color: #fff;
+      }
+      .news-inner {
+        padding: 12px;
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.92),
+          rgba(255, 255, 255, 0.85)
+        );
+        color: #024257;
+        border-radius: 6px;
+        margin: 12px;
+        box-sizing: border-box;
+        height: calc(100% - 24px);
+        overflow: hidden;
+      }
+      .news-title {
+        font-size: 14px;
+        margin: 0 0 8px;
+        color: #02343b;
+      }
+      .news-scroller {
+        height: 100%;
+        overflow-y: auto;
+        padding-right: 6px;
+      }
+      .news-item {
+        margin: 0 0 12px;
+        font-size: 13px;
+        color: #02343b;
+      }
     </style>
+    <!-- Security meta tags (best-effort for static files) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+    <!-- Note: HSTS must be configured on the server, not via meta tags -->
   </head>
   <body>
     <section
@@ -56,35 +122,59 @@
             Navarre and surrounding communities — clean design, clear pricing,
             and friendly local support.
           </p>
-          <a
-            href="#packages"
-            style="
-              display: inline-block;
-              padding: 10px 14px;
-              background: #0077b6;
-              color: #fff;
-              border-radius: 6px;
-              text-decoration: none;
-            "
-            >View Packages</a
-          >
+          <a href="#packages" class="cta-btn">View Packages</a>
         </div>
         <div
+          class="news-card"
           style="
             flex: 0 1 420px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 6px 18px rgba(3, 37, 65, 0.12);
-            background:
-              linear-gradient(rgba(0, 119, 182, 0.7), rgba(0, 119, 182, 0.7)),
-              url(&quot;https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80&quot;)
-                center/cover fixed no-repeat;
-            height: 260px;
           "
         >
-          <div style="padding: 12px; background: #fff; margin-top: 220px">
-            <div style="font-size: 14px; color: #024257">
-              Local-focused web design with personal service
+          <div
+            style="
+              background: url(&quot;https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80&quot;)
+                center/cover fixed no-repeat;
+              height: 100%;
+            "
+          >
+            <div class="news-inner" id="newsInner">
+              <h4 class="news-title">Navarre & Nearby News</h4>
+              <div
+                class="news-scroller"
+                id="newsScroller"
+                tabindex="0"
+                aria-label="Local news list"
+              >
+                <ul style="margin: 0; padding-left: 18px; list-style: none">
+                  <li class="news-item">
+                    <strong>Navarre:</strong> Local festival planning underway
+                    for June — vendors invited.
+                  </li>
+                  <li class="news-item">
+                    <strong>Milton:</strong> Community center announces free
+                    summer workshops for youth.
+                  </li>
+                  <li class="news-item">
+                    <strong>Gulf Breeze:</strong> Beach clean-up scheduled this
+                    weekend; volunteers needed.
+                  </li>
+                  <li class="news-item">
+                    <strong>Fort Walton:</strong> New small-business grant
+                    application deadline extended.
+                  </li>
+                  <li class="news-item">
+                    <strong>Navarre:</strong> Main Street renovation project
+                    enters design phase.
+                  </li>
+                  <li class="news-item">
+                    <strong>Milton:</strong> Farmers market adds evening hours
+                    on Thursdays.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -144,14 +234,14 @@
             </li>
             <li>Mobile-friendly layout and simple contact form.</li>
             <li>
-              Basic photo placement and local business details (hours, location,
-              services).
+              Center photo placement and local business details (hours,
+              location, services).
             </li>
           </ul>
           <p style="margin: 0; color: #04545a">
             Perfect for sole-proprietors and small shops that just need a
-            website, affordable global exposure. local businesses looking for
-            more tourist attraction
+            website and affordable global exposure. For Local businesses looking
+            for more tourist/local attraction
           </p>
         </div>
 
@@ -177,18 +267,20 @@
           </div>
           <ul style="margin: 0 0 12px; padding-left: 18px; color: #034b53">
             <li>
-              Everything in the Humble Page Package, plus multiple pages (About,
-              Services, Contact).
+              As Opposed to the Humble Page Package, This package features
+              multiple pages (Hiring, Services, reservations, "Contact Us"
+              ect.).
             </li>
             <li>
               Monthly maintenance included (security updates, small content
-              tweaks).
+              tweaks, service ticket access).
             </li>
             <li>Simple updates for seasonal or promotional content.</li>
           </ul>
           <p style="margin: 0; color: #04545a">
-            A reliable, worry-free choice for established local businesses who
-            want a fuller website and continued upkeep.
+            A reliable, worry-free choice for established businesses who want a
+            fuller website and continued upkeep as well as a comprehensive
+            designs that projects professionalism and success.
           </p>
         </div>
 
@@ -228,7 +320,12 @@
           </ul>
           <p style="margin: 0; color: #04545a">
             For businesses that want one trusted local partner to manage their
-            whole web presence and be available when it matters most.
+            whole web presence and be available when it matters most, services
+            are provided to match your needs and contract terms. This is the
+            most comprehensive package and can be customized to fit your
+            business needs online, helping you get the most out of your
+            investment with our proprietary process and localized follow up
+            afterservices.
           </p>
         </div>
       </div>
@@ -253,7 +350,8 @@
             included in the signed agreement. We can build a plan that fits what
             you are looking for — weekly, monthly, or annual billing as
             preference. longer term subscriptions are subject to a fixed
-            contract.
+            contract. Contact us today about fixed designs and customized online
+            services (logo designs, entrepreneurship consultions ect.)
           </p>
         </div>
         <div
@@ -266,12 +364,90 @@
           "
         >
           <strong style="display: block; color: #024b56; margin-bottom: 8px"
-            >want to see more about our sevices and pricing?</strong
+            >Ready to start?</strong
           >
           <div style="font-size: 14px; color: #033b44">
-            Call or email for a quick chat — we’ll suggest the best
-            service/package.
+            Get started with us today! we'll suggest the best package and/or
+            additional services for your needs
           </div>
+
+          <form
+            id="contactForm"
+            onsubmit="return checkRateLimit(event);"
+            style="margin-top: 12px"
+          >
+            <!-- Honeypot to trap bots; hidden from users -->
+            <div style="position: absolute; left: -9999px; overflow: hidden">
+              <label for="company"
+                >Company name/ website or service(s) provided</label
+              >
+              <input
+                id="company"
+                name="company"
+                type="text"
+                autocomplete="off"
+              />
+            </div>
+            <input
+              id="emailField"
+              name="email"
+              type="email"
+              placeholder="Your email"
+              required
+              autocomplete="email"
+              maxlength="254"
+              style="
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+              "
+            />
+            <textarea
+              id="messageField"
+              name="message"
+              placeholder="Tell us about you and the services you're interested in..."
+              required
+              maxlength="2000"
+              style="
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+                height: 80px;
+                box-sizing: border-box;
+              "
+            ></textarea>
+            <button
+              type="submit"
+              style="
+                width: 100%;
+                padding: 10px;
+                background: #0077b6;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: 600;
+              "
+            >
+              Send contact information and message
+            </button>
+            <div
+              id="rateLimitMsg"
+              style="
+                margin-top: 8px;
+                font-size: 12px;
+                color: #d32f2f;
+                display: none;
+              "
+            ></div>
+          </form>
+
           <div
             style="
               margin-top: 10px;
@@ -279,18 +455,32 @@
               color: #667;
               line-height: 1.2;
             "
-          ></div>
+          >
+            Phone: (850) 555-0123
+            <br />
+            Email:
+            <a
+              href="#"
+              onclick="
+                revealEmail();
+                return false;
+              "
+              style="color: #0077b6; text-decoration: none"
+              >Contact us</a
+            >
+          </div>
         </div>
       </div>
     </section>
 
     <script>
-      // Email reveal function
+      // Email reveal function (protects from scrapers)
       function revealEmail() {
         alert("jp3303@proton.com");
       }
 
-      // Rate limiting for form submissions
+      // ============ RATE LIMITING PROTECTION ============
+      // Prevents brute force & spam by limiting form submissions
       const formAttempts = JSON.parse(
         localStorage.getItem("formAttempts") || "{}",
       );
@@ -313,7 +503,7 @@
           (timestamp) => now - timestamp < TIME_WINDOW,
         );
 
-        // Check if user exceeded limit
+        // Check if user exceeded limit (5 attempts per hour)
         if (formAttempts[userID].length >= MAX_ATTEMPTS) {
           const oldestAttempt = formAttempts[userID][0];
           const resetTime = new Date(oldestAttempt + TIME_WINDOW);
@@ -321,6 +511,7 @@
 
           const msgEl = document.getElementById("rateLimitMsg");
           msgEl.style.display = "block";
+          msgEl.style.color = "#d32f2f";
           msgEl.textContent = `⚠️ Too many attempts. Please try again in ${minutes} minute(s).`;
           return false;
         }
@@ -328,22 +519,195 @@
         // Record this attempt
         formAttempts[userID].push(now);
         localStorage.setItem("formAttempts", JSON.stringify(formAttempts));
-
-        // Show success message
+        // Send to server endpoint
+        const email = document.getElementById("emailField").value;
+        const message = document.getElementById("messageField").value;
+        const company = document.getElementById("company").value;
         const msgEl = document.getElementById("rateLimitMsg");
-        msgEl.style.display = "block";
-        msgEl.style.color = "#4caf50";
-        msgEl.textContent = "✓ Message sent! We'll get back to you soon.";
 
-        // In real app, send data to server here
-        // For now, reset form
-        setTimeout(() => {
-          document.getElementById("contactForm").reset();
-          msgEl.style.display = "none";
-        }, 3000);
+        msgEl.style.display = "block";
+        msgEl.style.color = "#333";
+        msgEl.textContent = "Sending...";
+
+        // Build a resilient endpoint for the contact proxy:
+        // If the page is opened as a file or origin is not available, default to localhost dev server.
+        const DEFAULT_API_BASE = "http://localhost:3000";
+        const pageOrigin = (window.location && window.location.origin) || "";
+        const apiBase =
+          window.location.protocol === "file:" ||
+          !pageOrigin ||
+          pageOrigin === "null"
+            ? DEFAULT_API_BASE
+            : pageOrigin;
+        const endpoint = apiBase.replace(/\/$/, "") + "/send-contact";
+
+        fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, message, company, honeypot: company }),
+        })
+          .then((r) => r.json())
+          .then((data) => {
+            if (data && data.ok) {
+              msgEl.style.color = "#4caf50";
+              msgEl.textContent = "✓ Message sent! We'll get back to you soon.";
+              setTimeout(() => {
+                document.getElementById("contactForm").reset();
+                msgEl.style.display = "none";
+              }, 3000);
+            } else {
+              msgEl.style.color = "#d32f2f";
+              msgEl.textContent =
+                "Error sending message. Please try again later.";
+            }
+          })
+          .catch((err) => {
+            console.warn("send error", err);
+            msgEl.style.color = "#d32f2f";
+            msgEl.textContent = "Network error. Please try again later.";
+          });
 
         return false;
       }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cta = document.querySelector(".cta-btn");
+        if (!cta) return;
+        cta.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.getElementById("packages");
+          if (target)
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          try {
+            cta.animate(
+              [
+                { transform: "scale(1)" },
+                { transform: "scale(1.03)" },
+                { transform: "scale(1)" },
+              ],
+              { duration: 260 },
+            );
+          } catch (err) {
+            /* animation not supported */
+          }
+        });
+      });
+    </script>
+    <script>
+      (function () {
+        const scroller = document.getElementById("newsScroller");
+        if (!scroller) return;
+
+        let paused = false;
+        scroller.addEventListener("mouseenter", () => (paused = true));
+        scroller.addEventListener("mouseleave", () => (paused = false));
+        scroller.addEventListener("focus", () => (paused = true));
+        scroller.addEventListener("blur", () => (paused = false));
+
+        // Populate scroller with items (array of {title, link, text})
+        function populateItems(items) {
+          const ul =
+            scroller.querySelector("ul") || document.createElement("ul");
+          ul.innerHTML = "";
+          items.forEach((it) => {
+            const li = document.createElement("li");
+            li.className = "news-item";
+            const strong = document.createElement("strong");
+            strong.textContent = it.titlePrefix || "";
+            if (strong.textContent) {
+              li.appendChild(strong);
+              li.appendChild(document.createTextNode(" "));
+            }
+            const span = document.createElement("span");
+            if (it.link) {
+              const a = document.createElement("a");
+              a.href = it.link;
+              a.textContent = it.text || it.title || it.link;
+              a.style.color = "#02343b";
+              a.style.textDecoration = "none";
+              a.target = "_blank";
+              a.rel = "noopener noreferrer";
+              span.appendChild(a);
+            } else {
+              span.textContent = it.text || it.title || "";
+            }
+            li.appendChild(span);
+            ul.appendChild(li);
+          });
+          // Ensure list has expected styles
+          ul.style.margin = "0";
+          ul.style.paddingLeft = "18px";
+          ul.style.listStyle = "none";
+          if (!scroller.querySelector("ul")) scroller.appendChild(ul);
+          scroller.scrollTop = 0;
+        }
+
+        // Server-side news fetch: request aggregated JSON from the server proxy
+        async function fetchFeeds() {
+          // Determine API base same as contact endpoint
+          const DEFAULT_API_BASE = "http://localhost:3000";
+          const pageOrigin = (window.location && window.location.origin) || "";
+          const apiBase =
+            window.location.protocol === "file:" ||
+            !pageOrigin ||
+            pageOrigin === "null"
+              ? DEFAULT_API_BASE
+              : pageOrigin;
+          const endpoint = apiBase.replace(/\/$/, "") + "/news";
+
+          try {
+            const res = await fetch(endpoint);
+            if (!res.ok) throw new Error("network");
+            const data = await res.json();
+            const items = (data.items || []).slice(0, 12).map((it) => ({
+              title: it.title || "",
+              link: it.link || "",
+              text: it.summary || "",
+            }));
+            if (items.length) {
+              populateItems(items);
+              return true;
+            }
+          } catch (err) {
+            console.warn("Server-side feed fetch failed", err);
+          }
+
+          return false;
+        }
+
+        // Start feed fetch but don't block the rest of the UI
+        fetchFeeds().then((ok) => {
+          if (!ok) {
+            console.info("No feeds loaded; using static sample items.");
+          }
+        });
+
+        // Smooth auto-scroll: advance 1px every 20ms
+        const STEP = 1;
+        const INTERVAL = 20;
+
+        function tick() {
+          if (paused) return;
+          if (scroller.scrollHeight - scroller.clientHeight === 0) return;
+          scroller.scrollTop += STEP;
+          // If reached bottom, jump to top smoothly
+          if (
+            scroller.scrollTop + scroller.clientHeight >=
+            scroller.scrollHeight - 1
+          ) {
+            scroller.scrollTop = 0;
+          }
+        }
+
+        // Reduce motion for users who prefer reduced motion
+        const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+        if (mq && mq.matches) return;
+
+        const id = setInterval(tick, INTERVAL);
+        // store id on element for debugging if needed
+        scroller.dataset._autoScrollId = id;
+      })();
     </script>
   </body>
 </html>

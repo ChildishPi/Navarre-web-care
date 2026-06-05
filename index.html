@@ -1,13 +1,18 @@
-<!doctype html>
-<html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; connect-src 'self' http://localhost:3000 https://example.com; img-src 'self' https://images.unsplash.com data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; upgrade-insecure-requests;"
-    />
+      <meta
+  http-equiv="Content-Security-Policy"
+  content="
+    default-src 'self';
+    connect-src 'self' http://localhost:3000 https://example.com;
+    img-src 'self' https://images.unsplash.com data:;
+    style-src 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-inline';
+    upgrade-insecure-requests;"/>  
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
     <meta http-equiv="Cache-Control" content="public, max-age=3600" />
     <title>Navarre Web Care — Professional Local Web Design</title>
@@ -51,22 +56,6 @@
       .news-card {
         height: 260px;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        background: linear-gradient(
-          rgba(0, 119, 182, 0.75),
-          rgba(0, 119, 182, 0.7)
-        );
-        color: #fff;
-      }
-      .news-inner {
-        padding: 12px;
-        background: linear-gradient(
-          rgba(255, 255, 255, 0.92),
-          rgba(255, 255, 255, 0.85)
-        );
-        color: #024257;
-        border-radius: 6px;
         margin: 12px;
         box-sizing: border-box;
         height: calc(100% - 24px);

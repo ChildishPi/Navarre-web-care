@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Local environment — holds SMTP credentials; never commit
+.env
+
+# Logs
+npm-debug.log*
+*.log
+
+# OS cruft
+Thumbs.db
+.DS_Store

@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; connect-src 'self'; img-src 'self' https://images.unsplash.com data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; upgrade-insecure-requests;"
+    />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="Cache-Control" content="public, max-age=3600" />
+    <title>Navarre Web Care — Professional Local Web Design</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Security meta tags (best-effort for static files) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+    <!-- Note: HSTS must be configured on the server, not via meta tags -->
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="#top">
+        <img
+          src="navarre-web-care-badge-logo.svg"
+          alt="Navarre Web Care"
+          width="36"
+          height="36"
+        />
+        Navarre Web Care
+      </a>
+      <nav aria-label="Primary">
+        <ul class="site-nav">
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero -->
+      <section class="hero" id="top">
+        <div class="hero__content">
+          <h1>Navarre Web Care</h1>
+          <p class="hero__subhead">
+            Professional, dependable website services for small businesses in
+            Navarre and surrounding communities — clean design, clear pricing,
+            and friendly local support.
+          </p>
+          <a href="#packages" class="btn btn--primary" id="cta-view-packages"
+            >View Packages</a
+          >
+        </div>
+
+        <div class="dispatch">
+          <div class="dispatch__masthead">
+            <div class="dispatch__title">Navarre & Nearby News</div>
+          </div>
+          <div class="dispatch__body">
+            <div
+              class="dispatch__scroller"
+              id="newsScroller"
+              tabindex="0"
+              aria-label="Local news list"
+            >
+              <ul class="dispatch__list">
+                <li class="dispatch__item">
+                  <strong class="dispatch__tag">Navarre:</strong> Local festival
+                  planning underway for June — vendors invited.
+                </li>
+                <li class="dispatch__item">
+                  <strong class="dispatch__tag">Milton:</strong> Community
+                  center announces free summer workshops for youth.
+                </li>
+                <li class="dispatch__item">
+                  <strong class="dispatch__tag">Gulf Breeze:</strong> Beach
+                  clean-up scheduled this weekend; volunteers needed.
+                </li>
+                <li class="dispatch__item">
+                  <strong class="dispatch__tag">Fort Walton:</strong> New
+                  small-business grant application deadline extended.
+                </li>
+                <li class="dispatch__item">
+                  <strong class="dispatch__tag">Navarre:</strong> Main Street
+                  renovation project enters design phase.
+                </li>
+                <li class="dispatch__item">
+                  <strong class="dispatch__tag">Milton:</strong> Farmers market
+                  adds evening hours on Thursdays.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="banner"
+        role="img"
+        aria-label="Navarre, Florida coastline"
+      ></div>
+
+      <!-- Intro -->
+      <section class="intro-band">
+        <div class="intro-card">
+          <p>
+            Navarre Web Care custom-built designs are personalized and
+            comprehensive, easy-to-use websites for small, local businesses — We
+            focus on creating your own online home (not just Facebook) so
+            customers find you.
+          </p>
+        </div>
+      </section>
+
+      <!-- Packages -->
+      <section class="packages-band" id="packages">
+        <div class="packages">
+          <!-- Tier 1 -->
+          <div class="tier-card">
+            <span class="tier-card__numeral" aria-hidden="true">1</span>
+            <h3 class="tier-card__name">Humble Page Package</h3>
+            <div class="tier-card__price">$200 — single page</div>
+            <ul class="tier-card__list">
+              <li>
+                One polished page (home + contact area) tailored to your
+                business.
+              </li>
+              <li>Mobile-friendly layout and simple contact form.</li>
+              <li>
+                Center photo placement and local business details (hours,
+                location, services).
+              </li>
+            </ul>
+            <p class="tier-card__note">
+              Perfect for sole-proprietors and small shops that just need a
+              website and affordable digital exposure. For Local businesses
+              looking for more tourist/local attraction
+            </p>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="tier-card tier-card--2">
+            <span class="tier-card__numeral" aria-hidden="true">2</span>
+            <h3 class="tier-card__name">Wholesome Site Package</h3>
+            <div class="tier-card__price">$600 — multi-page + maintenance</div>
+            <ul class="tier-card__list">
+              <li>
+                As Opposed to the Humble Page Package, This package features
+                multiple pages (Hiring, Services, reservations, "Contact Us"
+                ect.).
+              </li>
+              <li>
+                Monthly maintenance included (security updates, small content
+                tweaks, service ticket access).
+              </li>
+              <li>Simple updates for seasonal or promotional content.</li>
+            </ul>
+            <p class="tier-card__note">
+              A reliable, worry-free choice for established businesses who want
+              a fuller website and continued upkeep as well as a comprehensive
+              designs that projects professionalism and success.
+            </p>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="tier-card tier-card--3">
+            <span class="tier-card__numeral" aria-hidden="true">3</span>
+            <h3 class="tier-card__name">Entire Internet Presence Package</h3>
+            <div class="tier-card__price">Custom pricing — full coverage</div>
+            <ul class="tier-card__list">
+              <li>
+                All services from previous tiers, plus priority 24/7 on‑call
+                technical support (per contract).
+              </li>
+              <li>
+                Holiday updates or themed changes — up to three times per year
+                (included).
+              </li>
+              <li>
+                Complete oversight: hosting coordination, backups, and emergency
+                fixes as agreed in your contract.
+              </li>
+            </ul>
+            <p class="tier-card__note">
+              For businesses that want one trusted local partner to manage their
+              whole web presence and be available when it matters most, services
+              are provided to match your needs and contract terms. This is the
+              most comprehensive package and can be customized to fit your
+              business needs online, helping you get the most out of your
+              investment with our proprietary process and localized follow up
+              afterservices.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Extras and Callout -->
+      <section class="addons-contact" id="contact">
+        <div class="addons">
+          <h2>Add‑ons & additional subscription based services</h2>
+          <p>
+            Ongoing subscriptions for additional maintenance,social media
+            advertising and managment,Holiday themes beyond the included three,
+            and 24/7 support are available when included in the signed
+            agreement. We can build a plan that fits what you are looking for —
+            weekly, monthly, or annual billing. longer term subscriptions are
+            subject to a fixed contract. Contact us today about fixed designs
+            and customized digial services you cant find anywhere else locally
+            in navarre!
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <strong class="contact-card__heading">Ready to start?</strong>
+          <div class="contact-card__sub">
+            We offer 15 minute consultations. talk to us today!
+          </div>
+
+          <form id="contactForm" novalidate>
+            <!-- Honeypot to trap bots; hidden from users -->
+            <div class="hp">
+              <label for="company"
+                >Company name/ website or service(s) provided</label
+              >
+              <input
+                id="company"
+                name="company"
+                type="text"
+                autocomplete="off"
+              />
+            </div>
+            <div class="field">
+              <input
+                id="emailField"
+                name="email"
+                type="email"
+                placeholder="Your email"
+                required
+                autocomplete="email"
+                maxlength="254"
+              />
+            </div>
+            <div class="field">
+              <textarea
+                id="messageField"
+                name="message"
+                placeholder="Tell us about you and the services you're interested in..."
+                required
+                maxlength="2000"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn--secondary">
+              Send contact information and message
+            </button>
+            <div id="rateLimitMsg" class="form-status"></div>
+          </form>
+
+          <div class="credit">
+            JOSHUA PITTS 2026
+            <br />
+            Email: jp3303@protonmail.com
+            <a
+              href="#"
+              onclick="
+                revealEmail();
+                return false;
+              "
+              >Contact us</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Email reveal function (protects from scrapers)
+      function revealEmail() {
+        alert("jp3303@proton.com");
+      }
+
+      // ============ RATE LIMITING PROTECTION ============
+      // Prevents brute force & spam by limiting form submissions
+      const formAttempts = JSON.parse(
+        localStorage.getItem("formAttempts") || "{}",
+      );
+      const MAX_ATTEMPTS = 5;
+      const TIME_WINDOW = 3600000; // 1 hour in milliseconds
+
+      function setFormStatus(el, variant, text) {
+        el.className = "form-status form-status--" + variant;
+        el.style.display = "block";
+        el.textContent = text;
+      }
+
+      function checkRateLimit(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("emailField").value.trim();
+        const message = document.getElementById("messageField").value.trim();
+        const company = document.getElementById("company").value.trim();
+        const msgEl = document.getElementById("rateLimitMsg");
+
+        if (!email || !message) {
+          setFormStatus(
+            msgEl,
+            "error",
+            "Please enter both your email and a message.",
+          );
+          return false;
+        }
+
+        const now = Date.now();
+        const userID = "local-user";
+
+        // Initialize user attempts if not exists
+        if (!formAttempts[userID]) {
+          formAttempts[userID] = [];
+        }
+
+        // Remove old attempts (older than 1 hour)
+        formAttempts[userID] = formAttempts[userID].filter(
+          (timestamp) => now - timestamp < TIME_WINDOW,
+        );
+
+        // Check if user exceeded limit (5 attempts per hour)
+        if (formAttempts[userID].length >= MAX_ATTEMPTS) {
+          const oldestAttempt = formAttempts[userID][0];
+          const resetTime = new Date(oldestAttempt + TIME_WINDOW);
+          const minutes = Math.ceil((resetTime - now) / 60000);
+
+          const msgEl = document.getElementById("rateLimitMsg");
+          setFormStatus(
+            msgEl,
+            "error",
+            `⚠️ Too many attempts. Please try again in ${minutes} minute(s).`,
+          );
+          return false;
+        }
+
+        // Record this attempt
+        formAttempts[userID].push(now);
+        localStorage.setItem("formAttempts", JSON.stringify(formAttempts));
+        // Send to server endpoint
+
+        setFormStatus(msgEl, "info", "Sending...");
+
+        // Build a resilient endpoint for the contact proxy:
+        // If the page is opened as a file or origin is not available, default to localhost dev server.
+        const DEFAULT_API_BASE = "http://localhost:3000";
+        const pageOrigin = (window.location && window.location.origin) || "";
+        const apiBase =
+          window.location.protocol === "file:" ||
+          !pageOrigin ||
+          pageOrigin === "null"
+            ? DEFAULT_API_BASE
+            : pageOrigin;
+        const endpoint = apiBase.replace(/\/$/, "") + "/send-contact";
+
+        fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, message, company, honeypot: company }),
+        })
+          .then((r) => r.json())
+          .then((data) => {
+            if (data && data.ok) {
+              setFormStatus(
+                msgEl,
+                "success",
+                "✓ Message sent! We'll get back to you soon.",
+              );
+              setTimeout(() => {
+                document.getElementById("contactForm").reset();
+                msgEl.style.display = "none";
+              }, 3000);
+            } else {
+              setFormStatus(
+                msgEl,
+                "error",
+                "Error sending message. Please try again later.",
+              );
+            }
+          })
+          .catch((err) => {
+            console.warn("send error", err);
+            setFormStatus(
+              msgEl,
+              "error",
+              "Network error. Please try again later.",
+            );
+          });
+
+        return false;
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contactForm");
+        if (form) {
+          form.addEventListener("submit", checkRateLimit);
+        }
+
+        const cta = document.getElementById("cta-view-packages");
+        if (!cta) return;
+        cta.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.getElementById("packages");
+          if (target)
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          try {
+            cta.animate(
+              [
+                { transform: "scale(1)" },
+                { transform: "scale(1.03)" },
+                { transform: "scale(1)" },
+              ],
+              { duration: 260 },
+            );
+          } catch (err) {
+            /* animation not supported */
+          }
+        });
+      });
+    </script>
+    <script>
+      (function () {
+        const scroller = document.getElementById("newsScroller");
+        if (!scroller) return;
+
+        let paused = false;
+        scroller.addEventListener("mouseenter", () => (paused = true));
+        scroller.addEventListener("mouseleave", () => (paused = false));
+        scroller.addEventListener("focus", () => (paused = true));
+        scroller.addEventListener("blur", () => (paused = false));
+
+        // Populate scroller with items (array of {title, link, text})
+        function populateItems(items) {
+          const ul =
+            scroller.querySelector("ul") || document.createElement("ul");
+          ul.className = "dispatch__list";
+          ul.innerHTML = "";
+          items.forEach((it) => {
+            const li = document.createElement("li");
+            li.className = "dispatch__item";
+            const strong = document.createElement("strong");
+            strong.className = "dispatch__tag";
+            strong.textContent = it.titlePrefix || "";
+            if (strong.textContent) {
+              li.appendChild(strong);
+              li.appendChild(document.createTextNode(" "));
+            }
+            const span = document.createElement("span");
+            if (it.link) {
+              const a = document.createElement("a");
+              a.href = it.link;
+              a.textContent = it.text || it.title || it.link;
+              a.target = "_blank";
+              a.rel = "noopener noreferrer";
+              span.appendChild(a);
+            } else {
+              span.textContent = it.text || it.title || "";
+            }
+            li.appendChild(span);
+            ul.appendChild(li);
+          });
+          if (!scroller.querySelector("ul")) scroller.appendChild(ul);
+          scroller.scrollTop = 0;
+        }
+
+        // Server-side news fetch: request aggregated JSON from the server proxy
+        async function fetchFeeds() {
+          // Determine API base same as contact endpoint
+          const DEFAULT_API_BASE = "http://localhost:3000";
+          const pageOrigin = (window.location && window.location.origin) || "";
+          const apiBase =
+            window.location.protocol === "file:" ||
+            !pageOrigin ||
+            pageOrigin === "null"
+              ? DEFAULT_API_BASE
+              : pageOrigin;
+          const endpoint = apiBase.replace(/\/$/, "") + "/news";
+
+          try {
+            const res = await fetch(endpoint);
+            if (!res.ok) throw new Error("network");
+            const data = await res.json();
+            const items = (data.items || []).slice(0, 12).map((it) => ({
+              title: it.title || "",
+              link: it.link || "",
+              text: it.summary || "",
+            }));
+            if (items.length) {
+              populateItems(items);
+              return true;
+            }
+          } catch (err) {
+            console.warn("Server-side feed fetch failed", err);
+          }
+
+          return false;
+        }
+
+        // Start feed fetch but don't block the rest of the UI
+        fetchFeeds().then((ok) => {
+          if (!ok) {
+            console.info("No feeds loaded; using static sample items.");
+          }
+        });
+
+        // Smooth auto-scroll: advance 1px every 20ms
+        const STEP = 1;
+        const INTERVAL = 20;
+
+        function tick() {
+          if (paused) return;
+          if (scroller.scrollHeight - scroller.clientHeight === 0) return;
+          scroller.scrollTop += STEP;
+          // If reached bottom, jump to top smoothly
+          if (
+            scroller.scrollTop + scroller.clientHeight >=
+            scroller.scrollHeight - 1
+          ) {
+            scroller.scrollTop = 0;
+          }
+        }
+
+        // Reduce motion for users who prefer reduced motion
+        const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+        if (mq && mq.matches) return;
+
+        const id = setInterval(tick, INTERVAL);
+        // store id on element for debugging if needed
+        scroller.dataset._autoScrollId = id;
+      })();
+    </script>
+  </body>
+</html>

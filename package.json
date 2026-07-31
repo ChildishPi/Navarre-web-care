@@ -1,0 +1,25 @@
+{
+  "name": "navarre-web-care",
+  "version": "1.0.0",
+  "description": "Static site and contact/news proxy server for Navarre Web Care",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.5.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.1",
+    "helmet": "^8.3.0",
+    "nodemailer": "^9.0.3",
+    "xml2js": "^0.6.2"
+  }
+}

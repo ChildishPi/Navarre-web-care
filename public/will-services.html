@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>"Will" Will Do It | Outdoor Maintenance & Handyman Services — Navarre, FL</title>
+    <meta
+      name="description"
+      content="Dependable outdoor maintenance, lawn care, tree removal, stump grinding, and small handyman services for homeowners in Navarre and nearby areas."
+    />
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="navarre-web-care-badge-logo.svg" type="image/svg+xml" />
+
+    <style>
+      :root {
+        --primary: #d97706;
+        --primary-dark: #b45309;
+        --dark: #0f172a;
+        --dark-soft: #1e293b;
+        --light: #f8fafc;
+        --border: #e2e8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+        line-height: 1.6;
+        color: #334155;
+        background-color: #ffffff;
+      }
+
+      .poc-banner {
+        background: #0284c7;
+        color: #ffffff;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .poc-banner a {
+        color: #ffffff;
+        text-decoration: underline;
+        font-weight: 700;
+      }
+
+      header {
+        background: var(--dark);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .hero {
+        background:
+          radial-gradient(ellipse at 15% 115%, rgba(217, 119, 6, 0.35), transparent 55%),
+          radial-gradient(ellipse at 90% -20%, rgba(217, 119, 6, 0.18), transparent 55%),
+          linear-gradient(160deg, #0f172a 0%, #1e293b 60%, #334155 100%);
+        min-height: 65vh;
+        display: flex;
+        align-items: center;
+        color: white;
+        text-align: center;
+      }
+
+      .hero .tagline {
+        display: inline-block;
+        color: var(--primary);
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.4rem, 5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 0.9rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s;
+      }
+
+      .btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      section {
+        padding: 5rem 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 800;
+        margin-bottom: 3rem;
+        color: var(--dark);
+      }
+
+      .feature-photo {
+        max-width: 880px;
+        margin: 0 auto 3rem;
+      }
+
+      .feature-photo img {
+        width: 100%;
+        display: block;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      .feature-photo figcaption {
+        text-align: center;
+        margin-top: 0.9rem;
+        color: #64748b;
+        font-size: 0.95rem;
+        font-style: italic;
+      }
+
+      .services-list {
+        max-width: 800px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .service-row {
+        background: var(--light);
+        border-left: 4px solid var(--primary);
+        border-radius: 0 10px 10px 0;
+        padding: 1.25rem 1.5rem;
+      }
+
+      .service-row h3 {
+        color: var(--dark);
+        margin-bottom: 0.35rem;
+        font-size: 1.2rem;
+      }
+
+      .service-row p {
+        color: #475569;
+      }
+
+      .news-scroller {
+        background: var(--dark-soft);
+        color: white;
+        padding: 1rem 0;
+        overflow: hidden;
+      }
+
+      footer {
+        background: var(--dark);
+        color: #cbd5e1;
+        padding: 3rem 0 1.5rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-grid h4 {
+        color: white;
+        margin-bottom: 0.75rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          gap: 1rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PROOF OF CONCEPT HEADER BAR -->
+    <div class="poc-banner">
+      ⚡ Proof of Concept Website built by <strong>Navarre Web Care</strong> —
+      <a href="index.html">Return to Navarre Web Care Main Site</a>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <div class="logo">"Will" Will Do It</div>
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html">Navarre Web Care</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="tagline">Navarre, Florida &amp; Surrounding Areas</span>
+        <h1>Reliable Help for the Jobs<br />That Need Doing</h1>
+        <p>
+          From lawn care and outdoor maintenance to tree removal, stump grinding, small repairs, and
+          LVP flooring, I provide dependable general labor services for homeowners who want the job
+          done right.
+        </p>
+        <a href="#contact" class="btn">Request a Free Estimate</a>
+      </div>
+    </section>
+
+    <!-- NEWS SCROLLER -->
+    <div class="news-scroller">
+      <div class="container" id="scroller" role="region" aria-label="Local news ticker">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <figure class="feature-photo">
+          <img
+            src="https://images.pexels.com/photos/6728930/pexels-photo-6728930.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Will mowing a residential lawn on a sunny afternoon"
+            width="1200"
+            height="800"
+          />
+          <figcaption>Doing what Will does best — one yard at a time.</figcaption>
+        </figure>
+        <div class="services-list">
+          <div class="service-row">
+            <h3>Lawn Care &amp; Related Jobs</h3>
+            <p>
+              Mowing, trimming, yard cleanup, debris removal, and other hands-on property jobs that
+              keep your outdoor space looking its best.
+            </p>
+          </div>
+          <div class="service-row">
+            <h3>Tree Removal &amp; Stump Grinding</h3>
+            <p>
+              Safe removal of unwanted trees and efficient stump grinding to open space and improve
+              the look of your yard.
+            </p>
+          </div>
+          <div class="service-row">
+            <h3>Small Handyman Tasks</h3>
+            <p>
+              Fence repairs, light carpentry, hanging shelves, minor fixes, and other practical jobs
+              around the home.
+            </p>
+          </div>
+          <div class="service-row">
+            <h3>LVP Flooring &amp; Minor Interior Updates</h3>
+            <p>
+              Installation of luxury vinyl plank flooring, trim work, baseboards, and simple
+              upgrades that refresh a room.
+            </p>
+          </div>
+          <div class="service-row">
+            <h3>General Labor &amp; Cleanup</h3>
+            <p>
+              Hauling, moving, junk removal, pressure washing, and other hands-on jobs for
+              homeowners who need reliable extra help.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="background: var(--light)">
+      <div class="container">
+        <h2>About "Will" Will Do It</h2>
+        <p
+          style="
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-size: 1.15rem;
+            line-height: 1.7;
+          "
+        >
+          My name is Will. I've built my business around dependable general labor and outdoor home
+          support for homeowners who want practical help without the hassle. I focus on lawn care,
+          outdoor maintenance, tree work, small repairs, and simple interior upgrades done honestly
+          and at fair prices. I'm based in Navarre, Florida, and I serve the surrounding areas.
+          Whether you need a one-time job or ongoing support, I'm here to help you get it done
+          right.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2>Get In Touch</h2>
+        <div style="max-width: 600px; margin: 0 auto">
+          <form id="contact-form" style="display: grid; gap: 1.25rem" autocomplete="on">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              maxlength="100"
+              style="
+                padding: 1rem;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                background: var(--light);
+              "
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              required
+              maxlength="20"
+              pattern="[0-9+\-\s()]{7,20}"
+              style="
+                padding: 1rem;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                background: var(--light);
+              "
+            />
+            <textarea
+              name="message"
+              placeholder="Describe the job"
+              rows="5"
+              maxlength="1000"
+              style="
+                padding: 1rem;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                background: var(--light);
+              "
+            ></textarea>
+            <!-- Honeypot field -->
+            <input
+              type="text"
+              name="company"
+              autocomplete="off"
+              tabindex="-1"
+              style="position: absolute; left: -9999px; opacity: 0; height: 0; width: 0"
+              aria-hidden="true"
+            />
+            <button type="submit" class="btn" style="width: 100%">Request a Free Estimate</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3 style="color: var(--primary)">"Will" Will Do It</h3>
+            <p>
+              Practical help for outdoor maintenance, lawn care, and small home projects.<br />Serving
+              Navarre and surrounding areas
+            </p>
+          </div>
+          <div>
+            <h4>Quick Links</h4>
+            <p><a href="#services" style="color: #cbd5e1">Services</a></p>
+            <p><a href="#about" style="color: #cbd5e1">About</a></p>
+            <p><a href="index.html" style="color: var(--primary)">Navarre Web Care Studio</a></p>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <p>Phone: (850) 376-2271</p>
+            <p>Email: will@willdoit.com</p>
+          </div>
+        </div>
+        <p
+          style="
+            text-align: center;
+            border-top: 1px solid #334155;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+          "
+        >
+          © 2026 "Will" Will Do It Handyman Services. Proof of Concept built by
+          <a href="index.html" style="color: #38bdf8">Navarre Web Care</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Client Scripts -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

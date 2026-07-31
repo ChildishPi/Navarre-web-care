@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Environment / secrets — never commit
+.env
+.env.*
+!.env.example
+# Deliberate exception: the honeypot decoy. Contains only FAKE credentials
+# and is meant to be committed — it's bait both for path scanners hitting
+# /.env (see security/honeypot.js) and for anyone who gets hold of the repo.
+!.env.backup
+
+# Keys and certs
+*.pem
+*.key
+*.crt
+
+# Logs
+npm-debug.log*
+*.log
+
+# Claude Code worktrees (created by background tasks; never deploy these)
+public/.claude/worktrees/
+
+# Editor
+.vscode/
+.idea/
+
+# OS cruft
+Thumbs.db
+.DS_Store

@@ -29,3 +29,9 @@ public/.claude/worktrees/
 # OS cruft
 Thumbs.db
 .DS_Store
+
+# Internal sales & lead guides (keep private)
+10_New_Leads_and_Universal_Script.md
+Legitimacy-Guide.md
+Navarre_Facebook-Only_Business_Outreach.md
+

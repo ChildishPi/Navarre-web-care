@@ -30,8 +30,5 @@ public/.claude/worktrees/
 Thumbs.db
 .DS_Store
 
-# Internal sales & lead guides (keep private)
-10_New_Leads_and_Universal_Script.md
-Legitimacy-Guide.md
-Navarre_Facebook-Only_Business_Outreach.md
-
+# Internal / private — sales docs, lead lists, scripts (never commit)
+private/
